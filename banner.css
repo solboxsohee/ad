@@ -1,6 +1,176 @@
-/* 상단배너 css */
-.banner{
-    position: absolute;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400..800&display=swap');
+
+/* 리셋css코드 */
+html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
 }
 
-/* 오른쪽 하단 팝업 css */
+/* cloudsync 이미지*/
+.cloudsync_sample{
+    width: 100%;
+    height: 200vh;
+    background: url("/images/cloudsync_screenshot.png") no-repeat;
+    background-size: cover;
+    position: relative;
+    top: 85px;
+}
+/* 기존css */
+.navbar-fixed-top{
+    top: 0;
+}
+.navbar-fixed-bottom, .navbar-fixed-top{
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+/* 상단배너 css */
+.top_banner{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 85px;
+    background-image: url("/images/banner_bg.png");
+    background-size: cover;
+    font-family: "Poppins", serif;
+}
+.copyright_box{
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.copy_wrap{
+    display: flex;
+    align-items:center;
+    height: 100%;
+}
+.head_copy{
+    color: #fff;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 0.8;
+}
+.small_copy{
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1;
+    margin-left: 10px;
+    margin-top: 8px;
+}
+.topBanner_btn{
+    border: none;
+    padding: 10px 40px 9px 40px;
+    background-color: #fff;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-left: 30px;
+}
+.topBanner_btn:hover{
+    box-shadow: 0 0 20px rgb(255,255,255);
+}
+.btn_logo{
+    width: 180px;
+}
+
+.banner_close{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+
+/* 오른쪽 하단 card-banner css */
+.card_banner{
+    width: 320px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 18px;
+    position: fixed;
+    right: 45px;
+    bottom: 40px;
+    box-shadow: 0 0 28px rgba(255, 167, 53, 0.3);
+}
+.card_img{
+    width: 320px;
+}
+.card_txt{
+    padding: 15px 25px 18px 25px;
+    font-family: "Poppins", serif;
+}
+.card_title{
+    width: 180px;
+    margin-bottom: 3px;
+}
+.card_txt h1{
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    color: #555;
+}
+.card_close{
+    border: none;
+    padding: 0;
+    background: transparent;
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    cursor: pointer;
+}
+
+.orange_btn {
+    z-index: 1;
+    background: linear-gradient(90deg, #FF7A25, #FFA735, #ffcb3b, #FF7A25);
+    background-size: 400%;
+    border: none;
+    color: #fff;
+    padding: 7px 0;
+    width: 100%;
+    font-size: 15px;
+    border-radius: 10px;
+    font-family: "Poppins", serif;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.orange_btn:hover {
+    animation-name: gradient;
+    animation-duration: 8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.orange_btn:before {
+    content: "";
+    z-index: -1;
+    background: linear-gradient(180deg, #FF7A25, #FFA735, #ffcb3b, #FF7A25);
+    /* 배경사이즈를 x축, y축으로 4배 늘린다. */
+    background-size: 400%;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.orange_btn:hover:before {
+    opacity: 1;
+    filter: blur(20px);
+    animation-name: gradient;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+}
+
+/* gradient animation */
+@keyframes gradient {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 400%;
+    }
+}
