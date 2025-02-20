@@ -17,6 +17,12 @@ html, body{
     position: relative;
     top: 85px;
 }
+@media all and (max-width: 659px) {
+    .cloudsync_sample{
+        top: 80px;
+    }
+}
+
 /* 기존css */
 .navbar-fixed-top{
     top: 0;
